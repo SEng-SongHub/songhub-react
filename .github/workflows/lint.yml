@@ -1,0 +1,20 @@
+name: Lint
+
+# Run this workflow after any code changes to maintain codestyle and best practices
+on: push
+
+jobs:
+  lint:
+    name: Lint NextJS App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+      - name: Install Dev Dependencies
+        run: npm install --dev-only
+      - name: Run Lint operation
+        run: npm run lint
