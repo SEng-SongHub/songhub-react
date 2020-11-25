@@ -38,7 +38,7 @@ export default class Home extends React.Component {
             
                         <input type="date" id="dob" name="dob" className={styles.datepicker}/>
             
-                        <input type="submit" value="Sign Up!" className={styles.signup}/>
+                        <a href="" className={styles.signup}>Sign up!</a> 
 					</div>
             
                     <h2>-- OR --</h2>

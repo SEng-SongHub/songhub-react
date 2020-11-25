@@ -36,7 +36,7 @@
     padding: 6px 12px;
 }
 
-.signup[type=submit] {
+.signup {
     width: 345px;
     background-color:cornflowerblue;
     color: white;
@@ -45,13 +45,14 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
 }
 
 .signup:hover {
     background-color: blue;
 }
 
-.signupGoogle[type=submit] {
+.signupGoogle {
     width: 345px;
     background-color:white;
     color: black;
@@ -61,14 +62,13 @@
     border-radius: 4px;
     border-color: black;
     cursor: pointer;
+    background-image: url('../public/google-icon.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: content-box;
 }
 
-.singupGoogle span.icon {
-    background: url() no-repeat;
-    float: right;
-    width: 10px;
-    height: 40px;
-}
 
 
 .footer {

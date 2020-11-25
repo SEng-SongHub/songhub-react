@@ -33,13 +33,12 @@ export default class Home extends React.Component {
 					</div>
             
                     <h2>-- OR --</h2>
-            
-                    <input type="submit" value="Sign Up!" className={styles.signup}/>
+
+                    <a href="signup" className={styles.signup}>Sign up!</a> 
 				</main>
 
 				<footer className={styles.footer}>
 					<a
-						href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
