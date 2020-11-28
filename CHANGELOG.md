@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Project Boilerplate
+- Added Header and Layout components
+- Created UI for upload page
 
 ### Changed
 
