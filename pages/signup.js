@@ -46,14 +46,16 @@ export default class Home extends React.Component {
 
 						<input type='date' id='dob' name='dob' className={styles.datepicker} />
 
-						<a href='' className={styles.signup}>
+						<a href='upload' className={styles.signup}>
 							Sign up!
 						</a>
 					</div>
 
 					<h2>-- OR --</h2>
 
-					<input type='submit' value='Sign in using Google' className={styles.signupGoogle} />
+					<a href='upload' className={styles.signupGoogle}>
+							Sign Up Using Google
+				    </a>
 				</main>
 
 				<footer className={styles.footer}>

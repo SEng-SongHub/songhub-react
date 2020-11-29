@@ -55,9 +55,11 @@ const Upload = () => {
             <TextField variant="outlined" className={classes.input2} name="name" label="Song Name" />
             <DropzoneArea onChange={handle} />
             <Divider />
+            <a href="play">
             <Button className={classes.btn} variant="contained" color="primary">
                             Upload
             </Button>
+            </a>
             <Button className={classes.btn} variant="contained" color="secondary">
                             Cancel
             </Button>

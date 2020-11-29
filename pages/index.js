@@ -35,6 +35,10 @@ export default class Home extends React.Component {
 							placeHolder='Password'
 						/>
 					</div>
+            
+                    <a href='upload' className={styles.signup}>
+						Log In
+					</a>
 
 					<h2>-- OR --</h2>
 
