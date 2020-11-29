@@ -1,0 +1,28 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - 'plugin:react/recommended'
+  - standard
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 8
+  sourceType: module
+plugins:
+  - react
+settings: {
+  "react": {
+      createClass: createReactClass,
+      pragma: React,
+      version: detect
+    },
+}
+rules: {
+  padded-blocks: 0,
+  semi: 0,
+  require-jsdoc: 0,
+  react/react-in-jsx-scope: 0,
+  max-len: 0,
+  space-before-function-paren: 0,
+}
