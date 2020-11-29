@@ -25,4 +25,5 @@ rules: {
   react/react-in-jsx-scope: 0,
   max-len: 0,
   space-before-function-paren: 0,
+  no-tabs: 0,
 }
