@@ -33,6 +33,7 @@ const Upload = () => {
   const classes = useStyles()
 
   const handle = (files) => {
+    console.log(_)
     setFiles(files)
   }
 
@@ -42,24 +43,27 @@ const Upload = () => {
         <title>Upload Song</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Grid className={classes.container} container direction="column" justify="center" alignItems="center">
+      <Grid className={classes.container} container direction='column' justify='center' alignItems='center'>
         <Paper className={classes.form} elevation={3}>
-          <Typography variant="h2" gutterBottom>Upload</Typography>
-          <Typography className={classes.paragraph} variant="body1" gutterBottom>
-                        Upload song by inputing the song name, album, and drag
-                        the file into the upload box or click on it to find it
-                        in your file system
+          <Typography variant='h2' gutterBottom>
+						Upload
           </Typography>
-          <form noValidate autoComplete="off">
-            <TextField variant="outlined" className={classes.input} name="album" label="Album Name" />
-            <TextField variant="outlined" className={classes.input2} name="name" label="Song Name" />
+          <Typography className={classes.paragraph} variant='body1' gutterBottom>
+						Upload song by inputing the song name, album, and drag the file into the upload box or click on
+						it to find it in your file system
+          </Typography>
+          <form noValidate autoComplete='off'>
+            <TextField variant='outlined' className={classes.input} name='album' label='Album Name' />
+            <TextField variant='outlined' className={classes.input2} name='name' label='Song Name' />
             <DropzoneArea onChange={handle} />
             <Divider />
-            <Button className={classes.btn} variant="contained" color="primary">
-                            Upload
-            </Button>
-            <Button className={classes.btn} variant="contained" color="secondary">
-                            Cancel
+            <a href='play'>
+              <Button className={classes.btn} variant='contained' color='primary'>
+								Upload
+              </Button>
+            </a>
+            <Button className={classes.btn} variant='contained' color='secondary'>
+							Cancel
             </Button>
           </form>
         </Paper>
