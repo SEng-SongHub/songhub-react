@@ -64,7 +64,9 @@ function play (props) {
 					<div className={styles.both}>
 						<div className={styles.top}>
 							<p style={{ textAlign: 'left', marginTop: '0' }}>
-								<ArrowBackIcon style={{ fontSize: 30, color: '#fff' }} />
+								<a href='/'>
+									<ArrowBackIcon style={{ fontSize: 30, color: '#fff' }} />
+								</a>
 							</p>
 							<h2>{song.name}</h2>
 							<h3>{song.artist}</h3>
