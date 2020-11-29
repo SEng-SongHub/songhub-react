@@ -15,7 +15,7 @@ export default class Home extends React.Component {
 					<link rel='icon' href='/favicon.ico' />
 				</Head>
 
-				<main className={styles.main}>
+				<main className={styles.signupMain}>
 					<h1 className={styles.title}>
 						<a>Welcome to SongHub!</a>
 					</h1>
