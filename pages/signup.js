@@ -16,29 +16,39 @@ export default class Home extends React.Component {
 
 				<main className={styles.main}>
 					<h1 className={styles.title}>
-						<a>Welcome to SongHub!</a>
+						<a>Signup for SongHub!</a>
 					</h1>
 
 					<p className={styles.description}>
-						Get started by logging in or creating a new account!
+						A world of free, unlimited music is waiting...
 					</p>
 
 					<div className={styles.vertical}>
-                        <h1>Log In</h1>
+            
+                        <p className={styles.descriptionsmall}>
+                            Please give us a bit of information about youself to get started!
+                        </p>
             
                         <input type="text" id="email" name="email" className={styles.textbox} placeHolder="Email"/>
             
             
                         <input type="text" id="password" name="password" className={styles.textbox} placeHolder="Password"/>
+            
+                        <input type="text" id="passwordConfirm" name="passwordConfirm" className={styles.textbox} placeHolder="Confirm Password"/>
+            
+                        <input type="date" id="dob" name="dob" className={styles.datepicker}/>
+            
+                        <a href="" className={styles.signup}>Sign up!</a> 
 					</div>
             
                     <h2>-- OR --</h2>
-
-                    <a href="signup" className={styles.signup}>Sign up!</a> 
+            
+                    <input type="submit" value="Sign in using Google" className={styles.signupGoogle}/>
 				</main>
 
 				<footer className={styles.footer}>
 					<a
+						href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
 						target='_blank'
 						rel='noopener noreferrer'
 					>

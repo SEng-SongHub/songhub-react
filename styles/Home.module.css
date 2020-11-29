@@ -3,8 +3,6 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .main {
@@ -15,6 +13,63 @@
   justify-content: center;
   align-items: center;
 }
+
+.vertical {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textbox[type=text] {
+    margin-bottom: 20px;
+    width: 345px;
+    padding: 8px 12px;
+}
+
+.textbox[type=text]:focus {
+    border: 3px #555;
+}
+
+.datepicker {
+    margin-bottom: 20px;
+    width: 345px;
+    padding: 6px 12px;
+}
+
+.signup {
+    width: 345px;
+    background-color:cornflowerblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signup:hover {
+    background-color: blue;
+}
+
+.signupGoogle {
+    width: 345px;
+    background-color:white;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid black;
+    border-radius: 4px;
+    border-color: black;
+    cursor: pointer;
+    background-image: url('../public/google-icon.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: content-box;
+}
+
+
 
 .footer {
   width: 100%;
@@ -43,7 +98,6 @@
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
 }
 
 .title {
@@ -53,13 +107,19 @@
 }
 
 .title,
-.description {
+.description,
+.descriptionsmall {
   text-align: center;
 }
 
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.descriptionsmall {
+  line-height: 1.5;
+  font-size: 1.0rem;
 }
 
 .code {
