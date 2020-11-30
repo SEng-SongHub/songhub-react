@@ -1,36 +1,82 @@
-# SongHub - FrontEnd
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=250px src="/doc/assets/logo.png" alt="Songhub Logo"></a>
+</p>
 
-Front-End for the Songhub project
+<h3 align="center">SongHub | Frontend</h3>
 
-## Changelog
+<div align="center">
 
-Check out the list of changes per release in the [changelog](/CHANGELOG.md)
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://songhub.atlassian.net)
+[![Build Status](https://github.com/SEng-SongHub/songhub-react/workflows/Lint/badge.svg)](https://github.com/SEng-SongHub/songhub-react/actions?query=workflow%3ALint)
+[![GitHub Issues](https://img.shields.io/github/issues/SEng-SongHub/songhub-react.svg)](https://github.com/SEng-SongHub/songhub-react/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SEng-SongHub/songhub-react.svg)](https://github.com/SEng-SongHub/songhub-react/pulls)
+[![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](/LICENSE)
 
-## Getting Started
+</div>
 
-First, run the development server:
+---
+
+<p align="center"> A world of free, open-source and unlimited music awaits you!
+    <br> 
+</p>
+
+## 🧐 About <a name = "about"></a>
+
+This repository is the front-end (ui) for the SongHub application. Allows you to listen, upload, and stream all your favourite music for **free**
+
+## 🗒 Getting Started
+
+### 👷‍♂️ Prerequisites
+
+You will need to install the required NPM Packages before running the front-end application.
 
 ```bash
-npm run dev
-# or
-yarn dev
+
+# Clone the project first
+git clone https://github.com/SEng-SongHub/songhub-react.git && cd songhub-react/
+
+# Install node packages from NPM
+npm i
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔧 For development
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+After installing prerequisites, you can write your code additions in feature branches tagged with ISSUE numbers or Jira ticket IDs.
 
-## Learn More
+Run the front-end in development mode
 
-To learn more about Next.js, take a look at the following resources:
+```bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+To Build the production-ready version of the app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+``` bash
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+npm run build
+
+```
+
+Then start the production web server
+
+```bash
+
+npm run start
+
+```
+
+## 👷‍♂️ Authors <a name = "authors" >
+
+### Maintainers
+
+- [Ben Sykes (SystemFiles)](https://sykesdev.ca/)
+- [Liam Stickney (liamstickney)](https://github.com/)
+- [Alec DiVito (alecdivito)](https://github.com/)
+
+### Contributors
+
+- Add your name [here](/CONTRIBUTORS.md) if you have contributed 😃
