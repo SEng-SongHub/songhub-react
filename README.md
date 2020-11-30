@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=250px src="/doc/assets/logo.png" alt="Songhub Logo"></a>
+ <img width=300px height=250px src="/doc/assets/logo.png" alt="Songhub Logo"></a>
 </p>
 
 <h3 align="center">SongHub | Frontend</h3>
