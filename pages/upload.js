@@ -1,9 +1,11 @@
 import { Button, Divider, Grid, Paper, TextField, Typography } from '@material-ui/core'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { makeStyles } from '@material-ui/core/styles'
 import { DropzoneArea } from 'material-ui-dropzone'
+import axios from 'axios'
+import Router from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
 	container : {
@@ -29,12 +31,56 @@ const useStyles = makeStyles((theme) => ({
 	}
 }))
 const Upload = () => {
-	const [ _, setFiles ] = useState()
+	const [ files, setFiles ] = useState([])
+	const [ inputState, setInputState ] = useState({
+		name   : '',
+		artist : ''
+	})
 	const classes = useStyles()
 
-	const handle = (files) => {
-		console.log(_)
-		setFiles(files)
+	const handle = (selectedFiles) => {
+		console.log(selectedFiles)
+		setFiles(selectedFiles)
+	}
+
+	const handleFieldChange = (evt) => {
+		setInputState({
+			...inputState,
+			[evt.target.name]: evt.target.value
+		})
+	}
+
+	const handleUpload = (evt) => {
+		evt.preventDefault()
+		uploadFiles(inputState.name, inputState.artist)
+	}
+
+	const uploadFiles = async (name, artist) => {
+		console.log(files)
+		if (files.length === 1) {
+			let formData = new FormData()
+			formData.append('file', files[0])
+			formData.append('name', name)
+			formData.append('artist', artist)
+
+			// Make request to backend
+			try {
+				const res = await axios({
+					method       : 'POST',
+					data         : formData,
+					responseType : 'json',
+					url          : 'http://localhost:5000/management/song'
+				})
+
+				if (res.status === 200 || res.status === 201) {
+					alert('Files uploaded!')
+					Router.push('/play')
+				}
+			} catch (err) {
+				console.log(`Failed to upload files. Reason: ${err}`)
+				alert(`${err}`)
+			}
+		}
 	}
 
 	return (
@@ -54,11 +100,26 @@ const Upload = () => {
 					</Typography>
 					<form noValidate autoComplete='off'>
 						<TextField variant='outlined' className={classes.input} name='album' label='Album Name' />
-						<TextField variant='outlined' className={classes.input2} name='name' label='Song Name' />
-						<DropzoneArea onChange={handle} />
+						<TextField
+							variant='outlined'
+							className={classes.input}
+							onChange={handleFieldChange}
+							name='artist'
+							label='Artist Name'
+							value={inputState.artist}
+						/>
+						<TextField
+							variant='outlined'
+							className={classes.input2}
+							onChange={handleFieldChange}
+							name='name'
+							label='Song Name'
+							value={inputState.name}
+						/>
+						<DropzoneArea filesLimit={1} onChange={handle} />
 						<Divider />
 						<a href='play'>
-							<Button className={classes.btn} variant='contained' color='primary'>
+							<Button className={classes.btn} variant='contained' onClick={handleUpload} color='primary'>
 								Upload
 							</Button>
 						</a>
