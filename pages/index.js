@@ -32,7 +32,6 @@ export default function Home () {
 			})
 
 			// Successful Login
-			console.log(res.data)
 			if (res.status === 200 || res.status === 201) {
 				Router.push('/upload')
 			}
