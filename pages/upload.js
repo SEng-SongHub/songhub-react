@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import { makeStyles } from '@material-ui/core/styles'
 import { DropzoneArea } from 'material-ui-dropzone'
 import axios from 'axios'
+import Router from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
 	container : {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }))
 const Upload = () => {
-	const [ files, setFiles ] = useState()
+	const [ files, setFiles ] = useState([])
 	const [ inputState, setInputState ] = useState({
 		name   : '',
 		artist : ''
@@ -71,13 +72,13 @@ const Upload = () => {
 					url          : 'http://localhost:5000/management/song'
 				})
 
-				if (res.status === 200) {
+				if (res.status === 200 || res.status === 201) {
 					alert('Files uploaded!')
-				} else {
-					console.log(res.data)
+					Router.push('/play')
 				}
 			} catch (err) {
 				console.log(`Failed to upload files. Reason: ${err}`)
+				alert(`${err}`)
 			}
 		}
 	}
@@ -105,6 +106,7 @@ const Upload = () => {
 							onChange={handleFieldChange}
 							name='artist'
 							label='Artist Name'
+							value={inputState.artist}
 						/>
 						<TextField
 							variant='outlined'
@@ -112,8 +114,9 @@ const Upload = () => {
 							onChange={handleFieldChange}
 							name='name'
 							label='Song Name'
+							value={inputState.name}
 						/>
-						<DropzoneArea onChange={handle} />
+						<DropzoneArea filesLimit={1} onChange={handle} />
 						<Divider />
 						<a href='play'>
 							<Button className={classes.btn} variant='contained' onClick={handleUpload} color='primary'>
