@@ -30,6 +30,25 @@
 	border: 3px #555;
 }
 
+.errorContainer {
+	width: 100%;
+	margin: 25px 0;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.06);
+}
+
+.errorContainer ul {
+	width: 100%;
+	list-style: none;
+	color: #333;
+}
+
+.errorContainer li {
+	width: 100%;
+	padding: 5px 0;
+}
+
 .datepicker {
 	margin-bottom: 20px;
 	width: 345px;
