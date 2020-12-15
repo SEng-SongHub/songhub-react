@@ -15,8 +15,8 @@ import styles from '../styles/Play.module.css'
 function play (props) {
   const { song } = props
 
-  const [playing, setPlaying] = useState(false)
-  const [progress, updateProgress] = useState(0)
+  const [ playing, setPlaying ] = useState(false)
+  const [ progress, updateProgress ] = useState(0)
 
   React.useEffect(
     () => {
@@ -34,20 +34,20 @@ function play (props) {
         clearInterval(timer)
       }
     },
-    [playing]
+    [ playing ]
   )
 
   const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: '#333'
+    palette : {
+      primary   : {
+        main : '#333'
       },
-      white: {
-        text: '#fff'
+      white     : {
+        text : '#fff'
       },
-      secondary: {
-        main: '#2980b9',
-        dark: '#34495e'
+      secondary : {
+        main : '#2980b9',
+        dark : '#34495e'
       }
     }
   })
@@ -76,8 +76,8 @@ function play (props) {
                   <ThemeProvider theme={theme}>
                     <LinearProgress
                       style={{
-                        height: '8px',
-                        borderRadius: '2px'
+                        height       : '8px',
+                        borderRadius : '2px'
                       }}
                       variant='determinate'
                       value={progress}
@@ -113,15 +113,15 @@ function play (props) {
 }
 
 play.propTypes = {
-  song: PropTypes.object
+  song : PropTypes.object
 }
 
 play.defaultProps = {
-  song: {
-    name: 'With a Spirit',
-    artist: '009 Sound System',
-    path: '',
-    img_src: '/public/files/song_cover.jpg'
+  song : {
+    name    : 'With a Spirit',
+    artist  : '009 Sound System',
+    path    : '',
+    img_src : '/public/files/song_cover.jpg'
   }
 }
 
