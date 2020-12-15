@@ -27,4 +27,6 @@ rules: {
   max-len: 0,
   space-before-function-paren: 0,
   no-tabs: 0,
+  array-bracket-spacing: 0,
+  key-spacing: 0
 }

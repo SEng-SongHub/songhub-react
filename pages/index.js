@@ -7,11 +7,11 @@ import Collapse from '@material-ui/core/Collapse'
 import { v4 as uuid } from 'uuid'
 
 export default function Home () {
-  const [inputState, setInputState] = useState({
-    email: '',
-    password: ''
+  const [ inputState, setInputState ] = useState({
+    email    : '',
+    password : ''
   })
-  const [errors, setErrors] = useState([])
+  const [ errors, setErrors ] = useState([])
 
   const handleInputChange = (evt) => {
     setInputState({
@@ -25,10 +25,10 @@ export default function Home () {
 
     try {
       const res = await axios({
-        method: 'POST',
-        url: 'http://localhost:5000/authentication/login',
-        data: inputState,
-        responseType: 'json'
+        method       : 'POST',
+        url          : 'http://localhost:5000/auth/login',
+        data         : inputState,
+        responseType : 'json'
       })
 
       // Successful Login
@@ -37,7 +37,7 @@ export default function Home () {
       }
     } catch (err) {
       console.log(err)
-      setErrors(['Invalid Credentials'])
+      setErrors([ 'Invalid Credentials' ])
     }
   }
 
@@ -76,7 +76,7 @@ export default function Home () {
           />
 
           <input
-            type='text'
+            type='password'
             id='password'
             name='password'
             onChange={handleInputChange}
@@ -86,19 +86,19 @@ export default function Home () {
         </div>
 
         <a href='#' onClick={login} className={styles.signup}>
-                    Log In
+          Log In
         </a>
 
         <h2>-- OR --</h2>
 
         <a href='signup' className={styles.signup}>
-                    Sign up!
+          Sign up!
         </a>
       </main>
 
       <footer className={styles.footer}>
         <a target='_blank' rel='noopener noreferrer'>
-                    Powered by Sick Beats
+          Powered by Sick Beats
         </a>
       </footer>
     </div>
