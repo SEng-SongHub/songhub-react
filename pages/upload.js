@@ -8,35 +8,35 @@ import axios from 'axios'
 import Router from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    height: '90vh'
+  container : {
+    height : '90vh'
   },
-  form: {
-    padding: '4rem',
-    width: 700
+  form      : {
+    padding : '4rem',
+    width   : 700
   },
-  paragraph: {
-    marginBottom: '2rem'
+  paragraph : {
+    marginBottom : '2rem'
   },
-  input: {
-    width: '100%',
-    paddingBottom: '1rem'
+  input     : {
+    width         : '100%',
+    paddingBottom : '1rem'
   },
-  input2: {
-    width: '100%',
-    paddingBottom: '2rem'
+  input2    : {
+    width         : '100%',
+    paddingBottom : '2rem'
   },
-  btn: {
-    margin: `${theme.spacing(2)}px ${theme.spacing(2)}px 0 0`
+  btn       : {
+    margin : `${theme.spacing(2)}px ${theme.spacing(2)}px 0 0`
   }
 }))
 
 const Upload = () => {
-  const [files, setFiles] = useState([])
-  const [inputState, setInputState] = useState({
-    name: '',
-    artist: '',
-    album: '',
+  const [ files, setFiles ] = useState([])
+  const [ inputState, setInputState ] = useState({
+    name   : '',
+    artist : '',
+    album  : ''
   })
   const classes = useStyles()
 
@@ -69,16 +69,15 @@ const Upload = () => {
       // Make request to backend
       try {
         const res = await axios({
-          method: 'POST',
-          data: formData,
-          responseType: 'json',
-          url: 'http://localhost:5000/management/song'
+          method       : 'POST',
+          data         : formData,
+          responseType : 'json',
+          url          : 'http://localhost:5000/management/song'
         })
         if (res.status === 200 || res.status === 201) {
-          alert('Files uploaded!')
           Router.push({
-            path: '/play',
-            query: { id: res.data.songs[0].id }
+            pathname : '/play',
+            query    : { id: res.data.songs[0].id }
           })
         }
       } catch (err) {
