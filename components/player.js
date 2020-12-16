@@ -1,5 +1,6 @@
-import { AppBar, Toolbar, makeStyles, Typography } from '@material-ui/core';
+import { Toolbar, makeStyles, Typography } from '@material-ui/core';
 import React, { useState, useEffect, useRef } from 'react';
+import Time from './time';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -41,15 +42,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     }
 }));
-
-const Time = ({ seconds }) => {
-    let min = Math.floor(seconds / 60);
-    let sec = Math.floor(seconds - min * 60);
-
-    if (min < 10) { min = `0${min}` }
-    if (sec < 10) { sec = `0${sec}` }
-    return <span>{`${min}:${sec}`}</span>;
-}
 
 const Player = ({ song, next, pervious }) => {
     const classes = useStyles();
