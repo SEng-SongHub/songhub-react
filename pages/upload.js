@@ -8,33 +8,34 @@ import axios from 'axios'
 import Router from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
-  container : {
-    height : '90vh'
+  container: {
+    height: '90vh'
   },
-  form      : {
-    padding : '4rem',
-    width   : 700
+  form: {
+    padding: '4rem',
+    width: 700
   },
-  paragraph : {
-    marginBottom : '2rem'
+  paragraph: {
+    marginBottom: '2rem'
   },
-  input     : {
-    width         : '100%',
-    paddingBottom : '1rem'
+  input: {
+    width: '100%',
+    paddingBottom: '1rem'
   },
-  input2    : {
-    width         : '100%',
-    paddingBottom : '2rem'
+  input2: {
+    width: '100%',
+    paddingBottom: '2rem'
   },
-  btn       : {
-    margin : `${theme.spacing(2)}px ${theme.spacing(2)}px 0 0`
+  btn: {
+    margin: `${theme.spacing(2)}px ${theme.spacing(2)}px 0 0`
   }
 }))
 const Upload = () => {
-  const [ files, setFiles ] = useState([])
-  const [ inputState, setInputState ] = useState({
-    name   : '',
-    artist : ''
+  const [files, setFiles] = useState([])
+  const [inputState, setInputState] = useState({
+    name: '',
+    artist: '',
+    album: '',
   })
   const classes = useStyles()
 
@@ -52,24 +53,25 @@ const Upload = () => {
 
   const handleUpload = (evt) => {
     evt.preventDefault()
-    uploadFiles(inputState.name, inputState.artist)
+    uploadFiles(inputState.name, inputState.album, inputState.artist)
   }
 
-  const uploadFiles = async (name, artist) => {
+  const uploadFiles = async (name, album, artist) => {
     console.log(files)
     if (files.length === 1) {
       const formData = new FormData()
       formData.append('file', files[0])
       formData.append('name', name)
       formData.append('artist', artist)
+      formData.append('album', album)
 
       // Make request to backend
       try {
         const res = await axios({
-          method       : 'POST',
-          data         : formData,
-          responseType : 'json',
-          url          : 'http://localhost:5000/management/song'
+          method: 'POST',
+          data: formData,
+          responseType: 'json',
+          url: 'http://localhost:5000/management/song'
         })
 
         if (res.status === 200 || res.status === 201) {
@@ -99,7 +101,6 @@ const Upload = () => {
             it in your file system
           </Typography>
           <form noValidate autoComplete='off'>
-            <TextField variant='outlined' className={classes.input} name='album' label='Album Name' />
             <TextField
               variant='outlined'
               className={classes.input}
@@ -107,6 +108,14 @@ const Upload = () => {
               name='artist'
               label='Artist Name'
               value={inputState.artist}
+            />
+            <TextField
+              variant='outlined'
+              className={classes.input}
+              onChange={handleFieldChange}
+              name='album'
+              label='Album Name'
+              value={inputState.album}
             />
             <TextField
               variant='outlined'
