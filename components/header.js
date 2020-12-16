@@ -28,6 +28,11 @@ const Header = () => {
               Listen
             </Button>
           </Link>
+          <Link href="/play">
+            <Button color="inherit">
+              Play
+            </Button>
+          </Link>
           <Link href="/upload">
             <Button color="inherit">
               Upload
