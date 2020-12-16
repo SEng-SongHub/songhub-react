@@ -6,8 +6,8 @@ function App ({ Component, pageProps }) {
 }
 
 App.propTypes = {
-  Component: PropTypes.object,
-  pageProps: PropTypes.object
+  Component : PropTypes.func,
+  pageProps : PropTypes.object
 }
 
 export default App
