@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     margin: `${theme.spacing(2)}px ${theme.spacing(2)}px 0 0`
   }
 }))
+
 const Upload = () => {
   const [files, setFiles] = useState([])
   const [inputState, setInputState] = useState({
@@ -73,10 +74,12 @@ const Upload = () => {
           responseType: 'json',
           url: 'http://localhost:5000/management/song'
         })
-
         if (res.status === 200 || res.status === 201) {
           alert('Files uploaded!')
-          Router.push('/play')
+          Router.push({
+            path: '/play',
+            query: { id: res.data.songs[0].id }
+          })
         }
       } catch (err) {
         console.log(`Failed to upload files. Reason: ${err}`)
@@ -125,7 +128,7 @@ const Upload = () => {
               label='Song Name'
               value={inputState.name}
             />
-            <DropzoneArea filesLimit={1} onChange={handle} />
+            <DropzoneArea filesLimit={1} maxFileSize={999999999} onChange={handle} />
             <Divider />
             <a href='play'>
               <Button className={classes.btn} variant='contained' onClick={handleUpload} color='primary'>

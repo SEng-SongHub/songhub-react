@@ -8,7 +8,7 @@ import Player from "../components/player";
 
 function song(props) {
     const [songs, setSongs] = useState([]);
-    const [current, setCurrent] = useState(-1)
+    const [current, setCurrent] = useState(-1);
 
     useEffect(() => {
         axios({
