@@ -25,6 +25,14 @@
 
 This repository is the front-end (ui) for the SongHub application. Allows you to listen, upload, and stream all your favourite music for **free**
 
+## 🚨 Dependencies
+
+This project requires the use of a external backend implementation.
+
+Available [here](https://github.com/SEng-SongHub/songhub-backend)
+
+> Please make sure that you are running the `songhub-backend` api on port 5000 (default). For example, to access the songs available in the app you would use `curl --location --request GET 'localhost:5000/management/song' `
+
 ## 🗒 Getting Started
 
 ### 👷‍♂️ Prerequisites
