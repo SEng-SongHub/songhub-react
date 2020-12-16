@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 
 const Time = ({ seconds }) => {
@@ -6,7 +7,7 @@ const Time = ({ seconds }) => {
 
     if (min < 10) { min = `0${min}` }
     if (sec < 10) { sec = `0${sec}` }
-    return <span>{`${min}:${sec}`}</span>;
+    return <Typography>{`${min}:${sec}`}</Typography>;
 }
 
 export default Time;
