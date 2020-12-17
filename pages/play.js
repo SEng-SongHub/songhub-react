@@ -1,4 +1,4 @@
-import { Grid, createMuiTheme, ThemeProvider, Button } from '@material-ui/core'
+import { Grid, createMuiTheme, ThemeProvider } from '@material-ui/core'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled'
 import FastForwardIcon from '@material-ui/icons/FastForward'
@@ -22,7 +22,7 @@ function play () {
   const [ progress, updateProgress ] = useState(0)
   const [ length, setLength ] = useState(0)
   const [ volume, setVolume ] = useState(60)
-  let audio = useRef(null)
+  const audio = useRef(null)
 
   useEffect(() => {
     axios({
@@ -64,7 +64,7 @@ function play () {
   useEffect(
     () => {
       if (audio != null && song) {
-        let a = audio.current
+        const a = audio.current
         if (playing) {
           a.play()
         } else {
@@ -87,7 +87,7 @@ function play () {
   useEffect(
     () => {
       if (audio !== null && song) {
-        let v = Math.min(Math.max(volume, 0), 100) / 100
+        const v = Math.min(Math.max(volume, 0), 100) / 100
         audio.current.volume = v
       }
     },
@@ -111,9 +111,8 @@ function play () {
   }
 
   const changeVolume = (event) => {
-    var x = event.pageX - event.currentTarget.offsetLeft, // or e.offsetX (less support, though)
-      y = event.pageY - event.currentTarget.offsetTop, // or e.offsetY
-      clickedValue = x * event.currentTarget.max / event.currentTarget.offsetWidth
+    var x = event.pageX - event.currentTarget.offsetLeft
+    var clickedValue = x * event.currentTarget.max / event.currentTarget.offsetWidth
     setVolume(clickedValue)
   }
 

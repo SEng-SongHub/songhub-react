@@ -2,7 +2,7 @@ import { Grid, Table, TableBody, TableCell, TableHead, TableRow } from '@materia
 import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import PropTypes from 'prop-types'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 // Styles
 import styles from '../styles/SongSelect.module.css'
@@ -54,6 +54,7 @@ function SongSelect (props) {
 
 SongSelect.propTypes = {
   songs    : PropTypes.array,
+  playing  : PropTypes.bool,
   onSelect : PropTypes.func
 }
 
