@@ -75,10 +75,7 @@ const Upload = () => {
           url          : 'http://localhost:5000/management/song'
         })
         if (res.status === 200 || res.status === 201) {
-          Router.push({
-            pathname : '/play',
-            query    : { id: res.data.songs[0].id }
-          })
+          Router.push('/play')
         }
       } catch (err) {
         console.log(`Failed to upload files. Reason: ${err}`)

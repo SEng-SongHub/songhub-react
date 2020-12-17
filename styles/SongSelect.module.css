@@ -1,0 +1,18 @@
+.songSelectContainer {
+  width: 80%;
+  min-height: 20rem;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 5px;
+  max-height: 20rem;
+  overflow: scroll;
+}
+
+.songSelectContainer .songRow {
+  cursor: pointer;
+}
+
+.songSelectContainer .songRow :hover + .songRow {
+  background-color: rgba(0, 0, 0, 0.1);
+}
