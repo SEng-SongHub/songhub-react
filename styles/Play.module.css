@@ -49,3 +49,24 @@
   color: #333;
   cursor: pointer;
 }
+.container .playerContainer .bottom .volumeSlider {
+  text-align: right;
+}
+.container .playerContainer .bottom .volumeSlider progress {
+  width: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+
+.container .playerContainer .bottom .volumeSlider progress::-webkit-progress-bar {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+.container .playerContainer .bottom .volumeSlider progress::-webkit-progress-value {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #333;
+}
