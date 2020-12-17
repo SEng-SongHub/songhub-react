@@ -9,31 +9,21 @@ import styles from '../styles/Header.module.css'
 
 const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar position='static'>
       <Toolbar className={styles.root}>
-        <Typography variant="h6">
-          SongHub
-      </Typography>
+        <Typography variant='h6'>SongHub</Typography>
         <div>
-          <Link href="/song">
-            <Button color="inherit">
-              Listen
-            </Button>
+          <Link href='/song'>
+            <Button color='inherit'>Listen</Button>
           </Link>
-          <Link href="/play">
-            <Button color="inherit">
-              Play
-            </Button>
+          <Link href='/play'>
+            <Button color='inherit'>Play</Button>
           </Link>
-          <Link href="/upload">
-            <Button color="inherit">
-              Upload
-            </Button>
+          <Link href='/upload'>
+            <Button color='inherit'>Upload</Button>
           </Link>
-          <Link href="/">
-            <Button color="inherit">
-              Signout
-            </Button>
+          <Link href='/'>
+            <Button color='inherit'>Signout</Button>
           </Link>
         </div>
       </Toolbar>
